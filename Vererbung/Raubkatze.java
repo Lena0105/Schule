@@ -1,24 +1,21 @@
 package Vererbung;
 
 public abstract class Raubkatze extends Tier {
-
 	
 	private int danger;
-	
-	public Raubkatze(String pName, boolean pWeiblich, double pGewicht, int pDanger) {
-		super(pName, pWeiblich, pGewicht);
-		danger = pDanger;
+
+	public Raubkatze(String name, boolean weiblich, double gewicht, int danger) {
+		super(name, weiblich, gewicht);
+		this.danger = danger;
 	}
 	
+	public abstract void bruellen();
+
 	@Override
 	public void buersten() {
-		// TODO Auto-generated method stub
-
+		System.out.println("Purrpurrpurr!");
 	}
 	
-	public void bruellen() {
-		
-	}
 	
 	public boolean isRaubkatze() {
 		boolean ergebnis = true;

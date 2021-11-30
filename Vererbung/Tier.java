@@ -5,17 +5,30 @@ public abstract class Tier {
 	private String name;
 	private boolean weiblich;
 	private double gewicht;
-	
-	public Tier(String pName, boolean pWeiblich, double pGewicht) {
-		name = pName;
-		pWeiblich = true;
-		gewicht = pGewicht;
+
+	public Tier(String name, boolean weiblich, double gewicht) {
+		super();
+		this.name = name;
+		this.weiblich = weiblich;
+		this.gewicht = gewicht;
 	}
-	
-	public abstract void buersten() {
-		
+
+	public abstract void buersten();
+
+
+	public void fuettern(double pMenge) {
+		gewicht += pMenge;
 	}
-	
+
+	public boolean isRaubkatze() {
+		boolean ergebnis = false;
+		Tier aktTier = Zoo.zootiere.getContent();
+		if(Raubkatze == aktTier) {
+			ergebnis = true;
+		}
+		return ergebnis;
+	}
+
 	@Override
 	public String toString() {
 		return "Tier [name=" + name + ", weiblich=" + weiblich + ", gewicht=" + gewicht + "]";
@@ -45,12 +58,5 @@ public abstract class Tier {
 		this.gewicht = gewicht;
 	}
 
-	public void fuettern(double pMenge) {
-		
-	}
-	
-	public boolean isRaubkatze() {
-		boolean ergebnis = false;
-		return ergebnis;
-	}
+
 }

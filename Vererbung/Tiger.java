@@ -1,13 +1,20 @@
 package Vererbung;
 
-import Vererbung.Raubkatze;
-
 public class Tiger extends Raubkatze {
+	
+	private int anzahlStreifen;
 
-		private int anzahlStreifen;
-		
-		public Tiger(String pName, boolean pWeiblich,double pGewicht, int pDanger, int pAnzahlStreifen) {
-			super(pName, pWeiblich, pGewicht, pDanger);
-			anzahlStreifen = pAnzahlStreifen;
-		}
+	public Tiger(String name, boolean weiblich, double gewicht, int anzahlStreifen, int danger) {
+		super(name, weiblich, gewicht, danger);
+		this.anzahlStreifen = anzahlStreifen;
+	}
+	
+	public void bruellen() {
+		System.out.println("Chchchau!");
+	}
+
+	public int getAnzahlStreifen(int pAnzahl) {
+		return anzahlStreifen;
+	}
+	
 }

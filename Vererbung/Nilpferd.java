@@ -2,10 +2,15 @@ package Vererbung;
 
 public class Nilpferd extends Tier {
 
-	@Override
-	public void buersten() {
-		// TODO Auto-generated method stub
-
+	public Nilpferd(String name, boolean weiblich, double gewicht) {
+		super(name, weiblich, gewicht);
+		// TODO Automatisch generierter Konstruktorstub
 	}
 
+	@Override
+	public void buersten() {
+		// TODO Automatisch generierter Methodenstub
+		System.out.println("Schnaub!");
+	}
+	
 }
