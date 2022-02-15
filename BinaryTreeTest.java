@@ -180,6 +180,32 @@ public class BinaryTreeTest {
 			einfuegen(pBaum.getLeftTree(),pZahl);
 		}
 	}
+	
+	//Rahmenmethode
+	public ListWithViewer<Integer> gibBlaetterList(){
+		return gibBlaetterList(suchbaum);
+	}
+
+	
+	
+	private ListWithViewer<Integer> gibBlaetterList(BinaryTree<Integer> pBaum){
+		ListWithViewer<Integer> ergebnis = new ListWithViewer<>();
+		if(pBaum.isEmpty()) {
+			return ergebnis;
+		}
+		if(pBaum.getLeftTree().isEmpty()&&pBaum.getRightTree().isEmpty()) {
+			ergebnis.append(pBaum.getContent());
+		}
+		
+		ListWithViewer<Integer> ergebnisL = gibBlaetterList(pBaum.getLeftTree());
+		ListWithViewer<Integer> ergebnisR = gibBlaetterList(pBaum.getRightTree());
+		
+		ergebnis.concat(ergebnisL);
+		ergebnis.concat(ergebnisR);
+
+		return ergebnis;
+	}
+
 
 
 	// Traversierungsverfahren
